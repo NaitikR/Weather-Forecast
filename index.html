@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="grid.css">
+  <link rel="stylesheet" type="text/css" href="style3.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" type="text/css">
+  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"
+        type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"
+  type="text/css">
+  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet"
+        type="text/css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <title>Weather App</title>
+</head>
+<body>
+  <header>
+   <div class="head">
+      <h1 id="Fonnt"> Your Daily Source of Accurate Weather <br></h1>
+        <h2 id="Fonnnt"> Powered By CKY  </h2>
+        <button type="button" class="btnnav" data-toggle="modal" data-target="#locModal"><ion-icon class="icon-big" name="location-outline"></ion-icon></button>
+      </div>
+
+
+  </header>
+
+
+<div class="area" id="t">
+
+  <div class="container main-temp"><br><br>
+<h4>Current Weather</h4><br>
+    <div class="row">
+
+      <div class="col-md-8 mx-auto text-center">
+
+        <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+
+          <h1  id="w-location"></h1>
+          <h5 class="text-dark" id="w-desc"></h5>
+          <h3 id="w-string"></h3>
+          <ul id="w-details" class="list-group mt-3">
+            <li class="list-group-item" id="w-humidity"></li>
+            <li class="list-group-item" id="w-dewpoint"></li>
+            <li class="list-group-item" id="w-feels-like"></li>
+            <li class="list-group-item" id="w-wind"></li>
+          </ul>
+          <br>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locModal">
+              Change Location
+            </button>
+        </div>
+      </div>
+    </div><br><br>
+  </div>
+</div>
+
+  <div class="container next-temp">
+    <br><br>
+    <!-- <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                </ul> -->
+      <h4>Next 3 Days Forecast</h4>
+<br>
+    <div class="row">
+      <div class="col-md-4 shadow-lg p-3 mb-5 bg-white rounded ">
+        <ul id="w-details" class="list-group mt-3 lol">
+          <li class="list-group-item new" id="w-datetime-one"></li>
+          <li class="list-group-item new" id="w-humidity-one"></li>
+          <li class="list-group-item new" id="w-temp-one"></li>
+          <li class="list-group-item new" id="w-wind-one"></li>
+        </ul>
+      </div>
+      <div class="col-md-4 shadow-lg p-3 mb-5 bg-white rounded ">
+        <ul id="w-details" class="list-group mt-3  lol">
+          <li class="list-group-item new" id="w-datetime-two"></li>
+          <li class="list-group-item new" id="w-humidity-two"></li>
+          <li class="list-group-item new" id="w-temp-two"></li>
+          <li class="list-group-item new" id="w-wind-two"></li>
+        </ul>
+      </div>
+      <div class="col-md-4 shadow-lg p-3 mb-5 bg-white rounded">
+        <ul id="w-details" class="list-group mt-3 lol">
+          <li class="list-group-item new1" id="w-datetime-three"></li>
+          <li class="list-group-item new1" id="w-humidity-three"></li>
+          <li class="list-group-item new1" id="w-temp-three"></li>
+          <li class="list-group-item new1" id="w-wind-three"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="button" id = "btn1" class="btnnext btn btn-primary" name="button">S H O W</button><br><br>
+    </div>
+
+  </div>
+  <!-- Modal -->
+<div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-labelledby="locModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="locModalLabel">Choose Location</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="w-form">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" id="city" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" class="form-control">
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="w-change-btn" type="button" href="#t" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="chart">
+
+  <div class="container text-center">
+    <br><h4>Temperature Vs Humidity</h4>
+    <div class="row pb-5">
+      <div class="col-md-8 ttd mx-auto">
+    <canvas id="canvas123" width="200px" height="200px"></canvas>
+  </div>
+</div>
+  <button type="button" id = "btn2" class="btn btn-primary" name="button">C H A R T</button>
+<br><br>
+  </div>
+</div>
+
+<footer class="site-footer">
+       <div class="container">
+         <div class="row">
+           <div class="col-sm-12 col-md-6">
+             <h6>About</h6>
+             <p class="text-justify">This is one of the most accurate weather forecast system present,made by Naitik Rathod, Chintan Acharya, Harnish S Chawla, Siddharth Trivedi.</p>
+           </div>
+
+           <div class="col">
+           <div class="col">
+             <h6>Quick Links</h6>
+             <ul class="footer-links">
+               <li><a href="http://scanfcode.com/about/">About Us</a></li>
+               <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+               <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+               <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+               <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+             </ul>
+           </div>
+         </div>
+         <hr>
+       </div>
+         <div class="row">
+           <div class="col-md-8 col-sm-6 col-xs-12">
+             <p class="copyright-text">Copyright © 2022 All Rights Reserved by
+          <a href="file:///C:/Users/Harnish&#39;s%20PC/OneDrive/Desktop/Weather/weather.html#">CKY Enterprises</a>.
+             </p>
+          <div class="row">
+         <div class="col span-1-of-2">
+         <i id="twitter" class="icon ion-logo-twitter"></i>
+
+         <i id="instagram" class="icon ion-logo-instagram"></i>
+
+         <i id="facebook" class="icon ion-logo-facebook"></i>
+         <br>
+         </div>
+         </div>
+           </div>
+         </div>
+ </div></footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  <script src="storage.js"></script>
+  <script src="weather.js"></script>
+  <script src="forecast.js"></script>
+  <script src="weather.js"></script>
+  <script src="ui.js"></script>
+  <script src="ui1.js"></script>
+  <script src="app.js"></script>
+  <script src="last.js"></script>
+</body>
+
+</html>
