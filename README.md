@@ -19,7 +19,7 @@ The analysis if humidity compared to the temperature of next 5 days using line g
 ## About
 This project was made for the DJSCE's ACM's Lines Of Code hackathon.
 ## Team Members
-Naitik Rathod (https://github.com/NaitikR)
-Chintan Acharya (https://github.com/chintan-27)
-Siddharth Trivedi (https://github.com/SidT12)
+Naitik Rathod (https://github.com/NaitikR) <br>
+Chintan Acharya (https://github.com/chintan-27) <br>
+Siddharth Trivedi (https://github.com/SidT12) <br>
 Harnish Singh Chawla 
